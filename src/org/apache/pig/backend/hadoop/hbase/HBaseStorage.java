@@ -722,7 +722,7 @@ public class HBaseStorage extends LoadFunc implements StoreFuncInterface, LoadPu
                     new String[] {contextSignature});
             p.setProperty(contextSignature + "_projectedFields", ObjectSerializer.serialize(requiredFieldList));
         }
-        m_conf.set(TableInputFormat.SCAN, convertScanToString(scan));
+        //m_conf.set(TableInputFormat.SCAN, convertScanToString(scan));
     }
 
     private void initialiseHBaseClassLoaderResources(Job job) throws IOException {
@@ -807,7 +807,7 @@ public class HBaseStorage extends LoadFunc implements StoreFuncInterface, LoadPu
         return location;
     }
 
-    private static String convertScanToString(Scan scan) {
+   /* private static String convertScanToString(Scan scan) {
         try {
             ByteArrayOutputStream out = new ByteArrayOutputStream();
             DataOutputStream dos = new DataOutputStream(out);
@@ -818,7 +818,7 @@ public class HBaseStorage extends LoadFunc implements StoreFuncInterface, LoadPu
             return "";
         }
 
-    }
+    }*/
 
     /**
      * Set up the caster to use for reading values out of, and writing to, HBase.

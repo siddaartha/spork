@@ -1,0 +1,17 @@
+Error before Pig is launched
+----------------------------
+ERROR 2998: Unhandled internal error. org.apache.hadoop.conf.Configuration.addDeprecations([Lorg/apache/hadoop/conf/Configuration$DeprecationDelta;)V
+
+java.lang.NoSuchMethodError: org.apache.hadoop.conf.Configuration.addDeprecations([Lorg/apache/hadoop/conf/Configuration$DeprecationDelta;)V
+	at org.apache.hadoop.mapreduce.util.ConfigUtil.addDeprecatedKeys(ConfigUtil.java:54)
+	at org.apache.hadoop.mapreduce.util.ConfigUtil.loadResources(ConfigUtil.java:42)
+	at org.apache.hadoop.mapred.JobConf.<clinit>(JobConf.java:119)
+	at org.apache.pig.backend.hadoop.executionengine.HExecutionEngine.init(HExecutionEngine.java:166)
+	at org.apache.pig.backend.hadoop.executionengine.HExecutionEngine.init(HExecutionEngine.java:122)
+	at org.apache.pig.impl.PigContext.connect(PigContext.java:246)
+	at org.apache.pig.PigServer.<init>(PigServer.java:225)
+	at org.apache.pig.PigServer.<init>(PigServer.java:210)
+	at org.apache.pig.tools.grunt.Grunt.<init>(Grunt.java:47)
+	at org.apache.pig.Main.run(Main.java:549)
+	at org.apache.pig.Main.main(Main.java:161)
+================================================================================

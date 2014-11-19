@@ -1,0 +1,40 @@
+Pig Stack Trace
+---------------
+ERROR 2002: 
+<line 4, column 0> Output Location Validation Failed for: '/user/ubuntu/output More info to follow:
+Output directory hdfs://localhost:9000/user/ubuntu/output already exists
+
+org.apache.pig.impl.logicalLayer.FrontendException: ERROR 1002: Unable to store alias distinct_queries
+	at org.apache.pig.PigServer$Graph.registerQuery(PigServer.java:1626)
+	at org.apache.pig.PigServer.registerQuery(PigServer.java:569)
+	at org.apache.pig.tools.grunt.GruntParser.processPig(GruntParser.java:1032)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:499)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:194)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:170)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:69)
+	at org.apache.pig.Main.run(Main.java:552)
+	at org.apache.pig.Main.main(Main.java:161)
+Caused by: org.apache.pig.impl.plan.VisitorException: ERROR 2002: 
+<line 4, column 0> Output Location Validation Failed for: '/user/ubuntu/output More info to follow:
+Output directory hdfs://localhost:9000/user/ubuntu/output already exists
+	at org.apache.pig.newplan.logical.rules.InputOutputFileValidator$InputOutputFileVisitor.visit(InputOutputFileValidator.java:95)
+	at org.apache.pig.newplan.logical.relational.LOStore.accept(LOStore.java:66)
+	at org.apache.pig.newplan.DepthFirstWalker.depthFirst(DepthFirstWalker.java:64)
+	at org.apache.pig.newplan.DepthFirstWalker.depthFirst(DepthFirstWalker.java:66)
+	at org.apache.pig.newplan.DepthFirstWalker.depthFirst(DepthFirstWalker.java:66)
+	at org.apache.pig.newplan.DepthFirstWalker.depthFirst(DepthFirstWalker.java:66)
+	at org.apache.pig.newplan.DepthFirstWalker.walk(DepthFirstWalker.java:53)
+	at org.apache.pig.newplan.PlanVisitor.visit(PlanVisitor.java:52)
+	at org.apache.pig.newplan.logical.rules.InputOutputFileValidator.validate(InputOutputFileValidator.java:45)
+	at org.apache.pig.backend.hadoop.executionengine.HExecutionEngine.compile(HExecutionEngine.java:303)
+	at org.apache.pig.PigServer.compilePp(PigServer.java:1386)
+	at org.apache.pig.PigServer.executeCompiledLogicalPlan(PigServer.java:1308)
+	at org.apache.pig.PigServer.execute(PigServer.java:1300)
+	at org.apache.pig.PigServer.access$400(PigServer.java:127)
+	at org.apache.pig.PigServer$Graph.registerQuery(PigServer.java:1621)
+	... 8 more
+Caused by: org.apache.hadoop.mapred.FileAlreadyExistsException: Output directory hdfs://localhost:9000/user/ubuntu/output already exists
+	at org.apache.hadoop.mapreduce.lib.output.FileOutputFormat.checkOutputSpecs(FileOutputFormat.java:146)
+	at org.apache.pig.newplan.logical.rules.InputOutputFileValidator$InputOutputFileVisitor.visit(InputOutputFileValidator.java:80)
+	... 22 more
+================================================================================

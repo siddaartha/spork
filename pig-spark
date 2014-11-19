@@ -13,9 +13,9 @@
 ##  http://docs.sigmoidanalytics.com/index.php/Setting_up_spork_with_spark_0.8.1
 
 #CONFIGURE THE FOLLOWING IF YOU HAVENT CONFIGURED ALREADY
-#export HADOOP_HOME=
-#export HADOOP_CONF_DIR=$HADOOP_HOME/conf
-#export SPARK_HOME=
+export HADOOP_HOME=~/hadoop
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export SPARK_HOME=~/spark
 export BROADCAST_MASTER_IP="127.0.0.1"
 export BROADCAST_PORT="6000"
 
